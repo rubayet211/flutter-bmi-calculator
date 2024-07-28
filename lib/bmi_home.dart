@@ -10,6 +10,10 @@ class BMIHome extends StatefulWidget {
 
 class _BMIHomeState extends State<BMIHome> {
   double heightValue = 1.5;
+  double weightValue = 50.0;
+  String status = '';
+  double bmi = 0.0;
+  Color color = Colors.green;
 
   @override
   Widget build(BuildContext context) {
@@ -17,6 +21,9 @@ class _BMIHomeState extends State<BMIHome> {
       backgroundColor: backgroundColor,
       appBar: AppBar(
         title: const Text("BMI Calculator"),
+      ),
+      body: Column(
+        children: [],
       ),
     );
   }

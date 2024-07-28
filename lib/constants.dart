@@ -21,3 +21,5 @@ abstract final class BMI {
   static const String obeseModerate = 'Obese Moderate';
   static const String obeseSevere = 'Obese Severe';
 }
+
+enum BMIUnit { m, ft, kg, lb }

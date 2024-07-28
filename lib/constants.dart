@@ -23,3 +23,10 @@ abstract final class BMI {
 }
 
 enum BMIUnit { m, ft, kg, lb }
+
+const textResultStyle = TextStyle(
+  letterSpacing: 1.2,
+  fontSize: 25,
+  fontWeight: FontWeight.bold,
+  color: Colors.white,
+);

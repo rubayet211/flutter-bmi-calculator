@@ -1,3 +1,4 @@
+import 'package:bmi_calculator/components/bmi_result.dart';
 import 'package:bmi_calculator/components/bmi_slider.dart';
 import 'package:bmi_calculator/constants.dart';
 import 'package:flutter/material.dart';
@@ -51,6 +52,11 @@ class _BMIHomeState extends State<BMIHome> {
               });
             },
           ),
+          BMIResult(
+            color: color,
+            bmi: bmi,
+            status: status,
+          )
         ],
       ),
     );

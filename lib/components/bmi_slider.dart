@@ -26,6 +26,45 @@ class BMISlider extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              label,
+              style: textLabelStyle,
+            ),
+            SizedBox(
+              width: 10,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                vertical: 4.0,
+              ),
+              child: RichText(
+                text: TextSpan(
+                  text: sliderValue.toStringAsFixed(1),
+                  style: textValueStyle,
+                  children: [
+                    TextSpan(
+                      text: ' ${unit.name}',
+                      style: textLabelStyle.copyWith(
+                        fontSize: 20,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+        Slider(
+          max: sliderMax,
+          min: sliderMin,
+          activeColor: Colors.white70,
+          inactiveColor: Colors.white30,
+          label: sliderValue.toStringAsFixed(1),
+          value: sliderValue,
+          onChanged: (value) {
+            onchanged(value);
+          },
         )
       ],
     );

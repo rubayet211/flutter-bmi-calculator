@@ -19,6 +19,66 @@ class _BMIHomeState extends State<BMIHome> {
 
   _updateBMI() {
     bmi = weightValue / (heightValue * heightValue);
+    _updateStatus();
+    _updateColor();
+  }
+
+  _updateStatus() {
+    status = _getStatus();
+  }
+
+  _updateColor() {
+    if (bmi < 16) {
+      color = Colors.green.shade100;
+    }
+    if (bmi >= 16 && bmi <= 16.9) {
+      color = Colors.green.shade200;
+    }
+    if (bmi >= 17 && bmi <= 18.4) {
+      color = Colors.green.shade300;
+    }
+    if (bmi >= 18.5 && bmi <= 24.9) {
+      color = Colors.green;
+    }
+    if (bmi >= 25 && bmi <= 29.9) {
+      color = Colors.red.shade200;
+    }
+    if (bmi >= 30 && bmi <= 34.9) {
+      color = Colors.red.shade400;
+    }
+    if (bmi >= 35 && bmi <= 39.9) {
+      color = Colors.red.shade600;
+    }
+    if (bmi >= 40) {
+      color = Colors.red.shade800;
+    }
+  }
+
+  _getStatus() {
+    if (bmi < 16) {
+      return BMI.underweightSevere;
+    }
+    if (bmi >= 16 && bmi <= 16.9) {
+      return BMI.underweightModerate;
+    }
+    if (bmi >= 17 && bmi <= 18.4) {
+      return BMI.underweightMild;
+    }
+    if (bmi >= 18.5 && bmi <= 24.9) {
+      return BMI.normal;
+    }
+    if (bmi >= 25 && bmi <= 29.9) {
+      return BMI.overweightPre;
+    }
+    if (bmi >= 30 && bmi <= 34.9) {
+      return BMI.obeseMild;
+    }
+    if (bmi >= 35 && bmi <= 39.9) {
+      return BMI.obeseModerate;
+    }
+    if (bmi >= 40) {
+      return BMI.obeseSevere;
+    }
   }
 
   @override

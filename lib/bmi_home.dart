@@ -5,14 +5,9 @@ import 'package:bmi_calculator/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class BMIHome extends StatefulWidget {
+class BMIHome extends StatelessWidget {
   const BMIHome({super.key});
 
-  @override
-  State<BMIHome> createState() => _BMIHomeState();
-}
-
-class _BMIHomeState extends State<BMIHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,7 +25,9 @@ class _BMIHomeState extends State<BMIHome> {
               sliderDivision: 100,
               sliderMax: 2.2,
               sliderMin: 1.2,
-              onchanged: (newValue) {},
+              onchanged: (newValue) {
+                provider.changeHeight(newValue);
+              },
             ),
           ),
           Consumer<BMIProvider>(
@@ -41,7 +38,9 @@ class _BMIHomeState extends State<BMIHome> {
               sliderDivision: 200,
               sliderMax: 150,
               sliderMin: 25,
-              onchanged: (newValue) {},
+              onchanged: (newValue) {
+                provider.changeWeight(newValue);
+              },
             ),
           ),
           Expanded(

@@ -1,8 +1,11 @@
 import 'package:bmi_calculator/bmi_home.dart';
+import 'package:bmi_calculator/bmi_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(ChangeNotifierProvider(
+      create: (context) => BMIProvider(), child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
